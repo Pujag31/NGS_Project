@@ -1,0 +1,120 @@
+VCF Generation Pipeline for NGS Data Analysis
+Project Overview
+
+This project automates Variant Call Format (VCF) generation from Next Generation Sequencing (NGS) data using a reproducible bioinformatics workflow. The pipeline processes raw sequencing data, performs alignment and variant calling, and generates standardized VCF output for downstream genomic analysis.
+
+The goal of this project is to create an efficient and scalable workflow that reduces manual intervention and enables faster genomic variant identification.
+
+Objectives
+Automate processing of raw sequencing files.
+Generate high-quality VCF files from sequencing reads.
+Standardize genomic analysis workflow.
+Enable reproducibility using containerized execution.
+Support future integration with APIs and web applications.
+Features
+
+✅ FASTQ input handling
+✅ Sequence alignment to reference genome
+✅ BAM generation and sorting
+✅ Duplicate marking
+✅ Variant calling workflow
+✅ VCF generation
+✅ Automated output storage
+✅ Docker-compatible execution
+✅ Scalable pipeline architecture
+
+Workflow Architecture
+Input FASTQ Files
+        ↓
+Quality Check (optional)
+        ↓
+Sequence Alignment (BWA)
+        ↓
+SAM → BAM Conversion
+        ↓
+Sorting & Indexing
+        ↓
+Duplicate Removal
+        ↓
+Variant Calling
+        ↓
+VCF Generation
+        ↓
+Output Storage
+Tech Stack
+Languages
+Python
+Shell Scripting
+Bioinformatics Tools
+BWA
+SAMtools
+GATK (planned/extendable)
+BCFtools
+Environment
+Docker
+Ubuntu / Linux
+VS Code
+Project Structure
+VCF_Generation_Project/
+│
+├── input/
+│   └── FASTQ files
+│
+├── reference/
+│   └── Reference Genome
+│
+├── alignment/
+│   ├── SAM
+│   └── BAM
+│
+├── results/
+│   ├── VCF
+│   └── logs
+│
+├── scripts/
+│   └── pipeline scripts
+│
+├── Dockerfile
+├── requirements.txt
+└── README.md
+Installation
+
+Clone repository:
+
+git clone <repository-url>
+cd VCF_Generation_Project
+
+Install dependencies:
+
+pip install -r requirements.txt
+
+Run pipeline:
+
+python main.py
+
+Or using Docker:
+
+docker build -t vcf-pipeline .
+docker run -v $(pwd):/app vcf-pipeline
+Output
+
+Generated outputs include:
+
+sample.sorted.bam
+sample.sorted.bam.bai
+sample.vcf
+pipeline_logs.txt
+Future Enhancements
+Full GATK Best Practices integration
+Streamlit dashboard
+REST API deployment
+Cloud execution support
+Annotation and clinical interpretation modules
+Use Cases
+Genomic research
+Variant discovery
+Clinical genomics workflows
+NGS data processing automation
+Author
+
+Puja Ganesan
